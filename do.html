@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Do.</title>
+  <link rel="stylesheet" href="nice.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+  <script src="todo.js"></script>
+</head>
+
+<body ng-app="todoApp">
+
+  <div class="jumbotron text-center">
+    <h1 class="text-muted">
+      Do!
+      <h5 class="text-center text-light" style="color: #cb5f5f !important;">Start:</h5>
+    </h1>
+  </div>
+
+  <div class="container" ng-controller="TodoCtrl" ng-init="completeList()">
+
+    <form ng-submit="send(todo)">
+
+    <div class="form-group">
+      <div class="placeholder-container">
+        <input ng-model="todo"
+               class="form-control input-placeholder"
+               placeholder="" name="todo" type="text"
+        >
+        <span class="placeholder-input" ng-class="{'placeholder-input-up': todo}">
+          What do you want to do?...
+          <span ng-if="!todo" ng-class="{'off': todo}" class="blinking">|</span>
+        </span>
+        <a href="#" class="ico-btn">
+          <i ng-click="send(todo)" ng-if="todo.length >= 4" class="far fa-check-circle"></i>
+        </a>
+      </div>
+    </div>
+    </form>
+
+    <div class="list">
+      <div ng-repeat="elem in list" class="card">
+        <!-- <img class="card-img-top" src="{{elem.img}}" ng-if="elem.img"></img> -->
+        <div class="card-body">
+          <h5 class="card-title">
+            {{$index + 1}} · {{elem.txt}}
+            <div class="check">
+              <i ng-if="elem.completed" ng-click="check($index)" class="checked fas fa-check-square"></i>
+              <i ng-if="!elem.completed" ng-click="check($index)" class="unchecked far fa-square"></i>
+            </div>
+          </h5>
+          <p class="card-text text-muted">
+            <i ng-click="delete($index)" class="delete fas fa-trash-alt"></i>
+            {{elem.date | date:'dd/MM/yy HH:ss'}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

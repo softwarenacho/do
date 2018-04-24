@@ -1,0 +1,153 @@
+body {
+  position: fixed;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+  padding: 0;
+  margin: 0;
+  border: 12.5px solid #cb5f5f;
+  background-color: whitesmoke;
+}
+
+.jumbotron {
+  padding-bottom: 1.5px !important;
+  margin-bottom: 1.5px !important;
+}
+
+.container {
+  margin-top: 17.5px;
+}
+
+.check {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #cb5f5f;
+}
+
+.delete {
+  display: none !important;
+  position: absolute;
+  font-size: 12.5px;
+  left: 5px;
+  bottom: 5px;
+}
+
+.card:hover .delete {
+  display: block !important;
+}
+
+input {
+  border-radius: 0px !important;
+}
+
+img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.list {
+  overflow: scroll;
+  max-height: calc(100vh - 250px);
+}
+
+.card {
+  border-radius: 0px !important;
+}
+
+.card-body {
+  padding: 5px !important;
+}
+
+.card-body .card-title {
+  margin-bottom: 1.5px;
+  padding-right: 17.5px;
+  font-weight: lighter;
+}
+
+.card-body .card-text {
+  font-size: 50%;
+  text-align: right;
+}
+
+.ico-btn {
+  position: absolute;
+  top: -2.5px;
+  left: 5.5px;
+  color: #cb5f5f !important;
+  font-size: 35px !important;
+  /* margin-top: -3px; */
+  /* margin-left: -35px; */
+  cursor: pointer;
+  z-index: 999999999999;
+}
+
+/* PLACEHOLDER TO LABEL */
+
+.placeholder-container {
+  position: relative;
+  border-top: 5px solid #cb5f5f;
+}
+
+.placeholder-input {
+  display: flex;
+  position: absolute;
+  font-size: 17.5px;
+  top: 12.5px;
+  margin-left: 47.5px;
+  color:#2b2b2b;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.input-placeholder {
+   padding-top: 17.5px !important;
+   padding-left: 45px !important;
+   z-index: 1;
+}
+
+.input-placeholder:focus + .placeholder-input {
+  animation: placeholder-up 1s forwards;
+}
+
+.off {
+  font-size: 17.5px !important;
+  margin-left: 2.5px !important;
+  animation: unset !important;
+  color: #e9ecef !important;
+}
+
+@keyframes placeholder-up {
+  to {
+    font-size: 12.5px;
+    top: 5px;
+    color:#e9ecef;
+  }
+}
+
+.placeholder-input-up {
+  font-size: 12.5px;
+  top: 5px;
+  color:#e9ecef;
+  z-index: 2 !important;
+}
+
+/* END PLACEHOLDER TO LABEL */
+
+/* BLINKING */
+
+.blinking {
+  color: #2b2b2b;
+  font-size: 22px;
+  margin-top: -7px;
+  animation: blink 2.5s infinite;
+}
+
+@keyframes blink {
+  0%   { color: #cb5f5f; }
+  50%  { color: transparent; }
+  100%   { color: #2b2b2b; }
+}
+
+/* END BLINKING */
