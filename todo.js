@@ -23,7 +23,7 @@ angular.module('todoApp', ['ngStorage']).controller('TodoCtrl', ['$scope','$loca
 
   function saveList() {
     console.log('Saved List');
-    $sessionStorage.list = $scope.list;
+    $localStorage.list = $scope.list;
   }
 
 }]);
