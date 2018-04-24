@@ -1,7 +1,7 @@
 angular.module('todoApp', ['ngStorage']).controller('TodoCtrl', ['$scope','$localStorage', '$sessionStorage', function($scope, $localStorage, $sessionStorage) {
 
   $scope.completeList = () => {
-    $scope.list = $sessionStorage.list || [];
+    $scope.list = $localStorage.list || [];
   }
 
   $scope.send = (txt) => {
